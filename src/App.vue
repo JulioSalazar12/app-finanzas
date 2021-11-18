@@ -11,7 +11,7 @@
             <v-tab>Financial Entity</v-tab>
             <v-tab>Bills</v-tab>
             <v-tab>Costs</v-tab>
-            <v-tab>Costs</v-tab>
+            <v-tab>Sample</v-tab>
           </v-tabs>
         </v-card>
       </template>
