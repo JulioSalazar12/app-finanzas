@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <v-card ref="form" class="pa-3">
+    <v-card ref="form" class="pa-3 mx-8">
       <v-card-title class="pl-12 font-weight-bold">This is About Page!</v-card-title>
       <v-card-text>
         <v-text-field outlined
