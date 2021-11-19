@@ -9,7 +9,6 @@
             </v-col>
             <v-col cols="6">
               <v-card-text>
-                <p>Second Column {{this.rate.lugar_Giro}}</p>
                 <p>Second Column</p>
                 <p>Second Column</p>
                 <p>Second Column</p>
@@ -55,7 +54,6 @@ export default {
     }
   }),
   created() {
-    this.selectData();
   },
   methods: {
     selectData(){

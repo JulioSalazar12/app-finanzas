@@ -6,7 +6,7 @@
         <v-card :class="`elevation-${hover ? 20 : 10}`" class="mx-auto my-5 transition-swing">
           <v-tabs centered background-color="black" dark>
             <v-tab to="/">User</v-tab>
-            <v-tab to="/About">Rate</v-tab>
+            <v-tab to="/tasa">Rate</v-tab>
             <v-tab>Client</v-tab>
             <v-tab>Financial Entity</v-tab>
             <v-tab>Bills</v-tab>
