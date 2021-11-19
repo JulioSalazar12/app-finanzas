@@ -5,10 +5,8 @@
       <template v-slot:default="{ hover }">
         <v-card :class="`elevation-${hover ? 20 : 10}`" class="mx-auto my-5 transition-swing">
           <v-tabs centered background-color="black" dark>
-            <v-tab to="/">User</v-tab>
             <v-tab to="/tasa">Rate</v-tab>
             <v-tab to="/cliente">Client</v-tab>
-            <v-tab>Financial Entity</v-tab>
             <v-tab>Bills</v-tab>
             <v-tab>Costs</v-tab>
             <v-tab>Sample</v-tab>

@@ -9,6 +9,9 @@
         <v-text-field class="mb-3" dense v-model="localidad"  label="Localidad"  outlined  clearable hide-details></v-text-field>
         <v-text-field class="mb-3" dense v-model="nombre"     label="Nombre y Apellido"  outlined  clearable hide-details></v-text-field>
         <v-text-field class="mb-3" dense v-model="telefono"   label="Telefono"  outlined  clearable hide-details></v-text-field>
+
+        <v-card-title class="font-weight-bold pt-3">Create a Financial Entity</v-card-title>
+        <v-text-field class="mb-3" dense v-model="entidadFinanciera"   label="Entidada Financiera"  outlined  clearable hide-details></v-text-field>
         <v-divider class="mt-5 mb-3"></v-divider>
         <v-card-actions>
           <v-btn outlined color="red" @click="reset">Cancel</v-btn>
@@ -30,6 +33,7 @@
 
 <script>
 import ClientService from '@/client/services/client.service'
+import FinancialEntityService from '@/client/services/financial-entity.service'
 
 export default {
   name: "client",
@@ -42,11 +46,12 @@ export default {
     localidad:'',
     nombre:   '',
     telefono: '',
+    entidadFinanciera: '',
   }),
   methods: {
     createNewClient () {
       this.snackbar = true;
-      this.text = "Cliente creado exitosamente";
+      this.text = "Cliente & Entidad Financiera creadas exitosamente";
       const client = {
         dni:      this.dni,
         dinero:   this.dinero,
@@ -55,10 +60,18 @@ export default {
         nombre:   this.nombre,
         telefono: this.telefono,
       };
+      const entity = {
+        entidadFinanciera: this.entidadFinanciera,
+      }
       ClientService.createClient(client)
         .then((response) => {
-          console.log(response.data);
+          console.log("new client:", response.data);
         });
+      FinancialEntityService.createNewFinancialEntity(entity)
+        .then((response) => {
+          console.log("new financial entity: ", response.data);
+        })
+
       this.reset();
     },
     reset () {
