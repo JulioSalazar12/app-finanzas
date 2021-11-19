@@ -1,7 +1,7 @@
 <template>
   <div class="tasa" align="center">
-    <v-card class="pa-8 mx-8" max-width="800">
-      <v-card-title class="font-weight-bold">Create a Rate</v-card-title>
+    <v-card class="pa-8 mx-8" max-width="900">
+      <v-card-title class="font-weight-bold pt-0">Create a Rate</v-card-title>
       <v-form ref="form">
         <v-text-field class="mb-3" dense v-model="plazoTasa"  label="Plazo Tasa"  outlined  clearable hide-details></v-text-field>
         <v-text-field class="mb-3" dense v-model="tipoTasa"  label="Tipo Tasa"  outlined  clearable hide-details></v-text-field>
