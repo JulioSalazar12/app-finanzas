@@ -7,8 +7,8 @@
           <v-tabs centered background-color="black" dark>
             <v-tab to="/tasa">Rate</v-tab>
             <v-tab to="/cliente">Client</v-tab>
-            <v-tab>Bills</v-tab>
-            <v-tab>Costs</v-tab>
+            <v-tab to="/letra">Bills</v-tab>
+            <v-tab to="/costes">Costs</v-tab>
             <v-tab>Sample</v-tab>
           </v-tabs>
         </v-card>
