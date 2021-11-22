@@ -50,6 +50,22 @@ const routes = [
     path: '/sign-up',
     name: 'sign-up',
     component: ()=>import('@/sign-up/pages/sign-up')
+  },
+  {
+    path: '/pago-letra',
+    name: 'pago-letra',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "pago-letra" */ '@/pago-letra/pages/pago-letra')
+  },
+  {
+    path: '/execute',
+    name: 'execute',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "execute" */ '@/execute/pages/execute')
   }
 ]
 
