@@ -3,8 +3,8 @@
     <v-card class="pa-8 mx-8" max-width="900">
       <v-card-title class="font-weight-bold pt-0">Create a Bills</v-card-title>
       <v-form ref="form">
-        <v-combobox   class="mb-3" clearable outlined hide-details dense   v-model="acreedor" label="Acreedor" :items="acreedores"          ></v-combobox>
-        <v-combobox   class="mb-3" clearable outlined hide-details dense   v-model="deudor" label="Deudor" :items="deudores"            ></v-combobox>
+        <v-text-field class="mb-3" dense outlined  clearable hide-details  v-model="ic" label="Interes Compensatorio"      ></v-text-field>
+        <v-text-field class="mb-3" dense outlined  clearable hide-details  v-model="im" label="Interes Moratorio"      ></v-text-field>
         <v-combobox   class="mb-3" clearable outlined hide-details dense   v-model="tasa" label="Tasa" :items="tasas"                ></v-combobox>
         <v-combobox   class="mb-3" clearable outlined hide-details dense   v-model="entidadFinanciera" label="Entidad Financiera" :items="entidadesFinancieras"   ></v-combobox>
         <v-text-field class="mb-3" dense outlined  clearable hide-details  v-model="valorNominal" label="Valor Nominal"      ></v-text-field>
@@ -37,8 +37,10 @@ import BillsService from '@/bills/services/bills.service'
 export default {
   name: "bills",
   data: () => ({
-    acreedor: null,
-    deudor: null,
+    snackbar: false,
+    text:'',
+    ic: '',
+    im: '',
     tasa: null,
     entidadFinanciera: null,
     valorNominal: '',

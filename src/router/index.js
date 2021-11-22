@@ -40,6 +40,22 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "costs" */ '@/costs/pages/costs')
+  },
+  {
+    path: '/pago-letra',
+    name: 'pago-letra',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "pago-letra" */ '@/pago-letra/pages/pago-letra')
+  },
+  {
+    path: '/execute',
+    name: 'execute',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "execute" */ '@/execute/pages/execute')
   }
 ]
 

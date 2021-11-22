@@ -32,6 +32,8 @@ import CostsService from "@/costs/services/costs.service";
 export default {
   name: "costs",
   data: () => ({
+    text: '',
+    snackbar: false,
     description: '',
     montoAsociado: '',
     fechaInicio: '',
