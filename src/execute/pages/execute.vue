@@ -4,7 +4,7 @@
       <v-card-title class="font-weight-bold pt-0">All Bills</v-card-title>
       <v-expansion-panels accordion flat dark>
         <v-expansion-panel v-for="val in values" :key="val.id">
-          <v-expansion-panel-header>Letra número - {{ val.id }}</v-expansion-panel-header>
+          <v-expansion-panel-header @click="executeByID(val.id)">Letra número - {{ val.id }}</v-expansion-panel-header>
           <v-expansion-panel-content>
             <v-form ref="form">
               <v-row>
@@ -55,7 +55,17 @@ export default {
   data: () => ({
     values: [],
   }),
+  updated() {
+    this.refreshList();
+  },
+  mounted() {
+    this.getOneBills();
+    this.refreshList();
+    this.getOneBills();
+  },
   created() {
+    this.getOneBills();
+    this.refreshList();
     this.getOneBills();
   },
   methods: {
@@ -63,11 +73,20 @@ export default {
       ExecuteService.getAll()
         .then((response) => {
           this.values = response.data;
+          this.refreshList();
           console.log("Response: ", response.data)
         })
         .catch( e => {
           console.log(e);
         })
+    },
+    executeByID(id){
+      ExecuteService.executeId(id);
+    },
+    refreshList(){
+      for (var i = 1; i <= this.values.length; i++) {
+        this.executeByID(i)
+      }
     }
   }
 }

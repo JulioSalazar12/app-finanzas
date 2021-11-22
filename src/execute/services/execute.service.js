@@ -7,8 +7,8 @@ class ExecuteService {
         return http.get(`${this.endpoint}/all`);
     }
 
-    getById(id){
-        return http.get(`${this.endpoint}/${id}`)
+    executeId(id){
+        http.get(`${this.endpoint}/execute/${id}`)
     }
 }
 
