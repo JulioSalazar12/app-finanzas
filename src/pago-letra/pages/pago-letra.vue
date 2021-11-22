@@ -14,7 +14,6 @@
       <v-form ref="form"  v-model="valid" lazy-validation>
         <v-combobox   class="mb-3" :rules="rules" clearable outlined hide-details dense   v-model="entidadFinanciera" label="Entidad Financiera" :items="entidadesFinancieras"   ></v-combobox>
         <v-combobox   class="mb-3" :rules="rules" clearable outlined hide-details dense   v-model="letra" label="Letra" :items="letras"   ></v-combobox>
-        <v-text-field class="mb-3" :rules="rules" dense outlined  clearable hide-details  v-model="montoPago" label="Monto Pago"   type="number"   ></v-text-field>
         <v-text-field class="mb-3" :rules="rules" dense outlined  clearable hide-details  v-model="ic" label="Interes Compensatorio" v-if="mora"     ></v-text-field>
         <v-text-field class="mb-3" :rules="rules" dense outlined  clearable hide-details  v-model="im" label="Interes Moratorio"     v-if="mora" ></v-text-field>
         <v-text-field class="mb-3" :rules="rules" dense outlined  clearable hide-details  v-model="tCEPm" label="tCEPm"                               v-if="mora"    ></v-text-field>
@@ -56,7 +55,6 @@ export default {
     ic: 0,
     entidadFinanciera: '',
     letra: '',
-    montoPago: '',
     tCEPm: 0,
     valor_Entregado_Mora: 0,
     diasTranscurridos: '',
@@ -78,7 +76,6 @@ export default {
         const PagoLetra = {
           ic: this.ic,
           im: this.im,
-          monto_Pago: this.montoPago,
           mora: this.mora,
           tCEPm:  this.tCEPm,
           valor_Entregado_Mora: this.valor_Entregado_Mora,
