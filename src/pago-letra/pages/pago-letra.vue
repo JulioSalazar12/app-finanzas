@@ -12,11 +12,11 @@
         ></v-switch>
       </v-card-title>
       <v-form ref="form">
-        <v-combobox   class="mb-3" clearable outlined hide-details dense   v-model="acreedor" label="Acreedor" :items="acreedores"          ></v-combobox>
-        <v-combobox   class="mb-3" clearable outlined hide-details dense   v-model="deudor" label="Deudor" :items="deudores"            ></v-combobox>
         <v-combobox   class="mb-3" clearable outlined hide-details dense   v-model="entidadFinanciera" label="Entidad Financiera" :items="entidadesFinancieras"   ></v-combobox>
         <v-combobox   class="mb-3" clearable outlined hide-details dense   v-model="letra" label="Letra" :items="letras"   ></v-combobox>
         <v-text-field class="mb-3" dense outlined  clearable hide-details  v-model="montoPago" label="Monto Pago"      ></v-text-field>
+        <v-text-field class="mb-3" dense outlined  clearable hide-details  v-model="ic" label="Interes Compensatorio" v-if="switch1"     ></v-text-field>
+        <v-text-field class="mb-3" dense outlined  clearable hide-details  v-model="im" label="Interes Moratorio"     v-if="switch1" ></v-text-field>
         <v-text-field class="mb-3" dense outlined  clearable hide-details  v-model="tCEPm" label="tCEPm"                               v-if="switch1"    ></v-text-field>
         <v-text-field class="mb-3" dense outlined  clearable hide-details  v-model="valor_Entregado_Mora" label="Valo entregado mora"  v-if="switch1"    ></v-text-field>
         <v-text-field class="mb-3" dense outlined  clearable hide-details  v-model="diasTranscurridos" label="Dias transcurridos"      ></v-text-field>
@@ -46,13 +46,11 @@ export default {
   data: () => ({
     snackbar: false,
     text: '',
-    acreedores: [],
-    deudores: [],
     entidadesFinancieras: [],
     letras: [],
     switch1: false,
-    acreedor: '',
-    deudor: '',
+    im: '',
+    ic: '',
     entidadFinanciera: '',
     letra: '',
     montoPago: '',
