@@ -84,14 +84,6 @@
         </v-col>
       </v-row>
     </v-container>
-    <!--<v-snackbar v-model="snackbar" :color=color dark>
-      {{ text }}
-      <template v-slot:action="{ attrs }">
-        <v-btn text v-bind="attrs" @click="snackbar = false">
-          Close
-        </v-btn>
-      </template>
-    </v-snackbar>-->
   </div>
 </template>
 
@@ -101,6 +93,7 @@ import router from "@/router";
 export default {
   name: "sign-up",
   data: () => ({
+    valid: true,
     email: '',
     password: '',
     usuario: {
@@ -121,13 +114,15 @@ export default {
       this.$refs.form.reset()
     },
     submit() {
-      this.usuario.correo = this.email;
-      this.usuario.contrasena = this.password;
-      SignupService.CreateUserEmail(this.usuario)
-      .then(response => {
-        console.log(response.data);
-        router.push("log-in");
-      })
+      if(this.$refs.form.validate()) {
+        this.usuario.correo = this.email;
+        this.usuario.contrasena = this.password;
+        SignupService.CreateUserEmail(this.usuario)
+        .then(response => {
+          console.log(response.data);
+          router.push("log-in");
+        })
+      }
     }
   }
 }

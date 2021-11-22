@@ -73,7 +73,6 @@ export default {
           idDeudor:   { id: charDeudor[0] },
           idTasa:     { id: charTasa[0] },
           idEf:       { id: charEf[0] },
-          //TODO: pasar idUsuario logueado
           idUsuario:  { id: idLogged },
           valor_Nominal: this.valorNominal,
           td: this.td,
