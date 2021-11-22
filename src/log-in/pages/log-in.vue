@@ -113,7 +113,7 @@ export default {
       LoginService.FindByEmail(this.email)
           .then((response) => {
             this.usuario=response.data;
-            localStorage.setItem('user', JSON.stringify(this.usuario));
+            localStorage.setItem('user', JSON.stringify(this.usuario.id));
             this.$store.dispatch('changeAuthenticatedTrueAction')
             router.push('/')
             console.log(response.data);

@@ -60,11 +60,10 @@
                     Reset Form
                   </v-btn>
                   <v-spacer></v-spacer>
-                  <v-btn :disabled="!valid"
-                         class="font-weight-bold"
+                  <v-btn class="font-weight-bold"
                          color="indigo accent-4"
                          text @click="submit">
-                    Submit
+                    Create
                   </v-btn>
                 </v-card-actions>
               </v-card>
@@ -97,11 +96,40 @@
 </template>
 
 <script>
+import SignupService from '@/sign-up/services/sign-up.service'
+import router from "@/router";
 export default {
   name: "sign-up",
+  data: () => ({
+    email: '',
+    password: '',
+    usuario: {
+      contrasena: '',
+      correo: ''
+    },
+    passwordRules: [ v => !!v || 'Password is required'],
+    emailRules: [
+      v => !!v || 'E-mail is required',
+      v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+    ],
+  }),
   mounted() {
     this.$store.dispatch('changeAuthenticatedFalseAction')
   },
+  methods: {
+    reset () {
+      this.$refs.form.reset()
+    },
+    submit() {
+      this.usuario.correo = this.email;
+      this.usuario.contrasena = this.password;
+      SignupService.CreateUserEmail(this.usuario)
+      .then(response => {
+        console.log(response.data);
+        router.push("log-in");
+      })
+    }
+  }
 }
 </script>
 

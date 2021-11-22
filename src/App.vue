@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-app-bar v-if="val" dark absolute app>
-      <v-toolbar-title class="font-weight-bold my-auto"><v-icon class="mr-1 py-1">mdi-school</v-icon>Asimov</v-toolbar-title>
+      <v-toolbar-title class="font-weight-bold my-auto"><v-icon class="mr-1 py-1">mdi-account-cash</v-icon>App Finance</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn depressed outlined rounded class="text-capitalize mx-1" @click="logOut">Log out<v-icon class="ml-2">mdi-logout-variant</v-icon></v-btn>
     </v-app-bar>
