@@ -24,6 +24,29 @@
       <router-view/>
     </v-main>
 
+    <v-footer dark padless>
+      <v-row>
+        <v-col cols="12">
+          <v-card flat tile class="theme--dark lighten-1 white--text text-center">
+            <v-card-text>
+              <v-btn v-for="icon in icons" :key="icon" class="mx-4 white--text" icon>
+                <v-icon size="24px">{{ icon }}</v-icon>
+              </v-btn>
+            </v-card-text>
+
+            <v-card-text class="white--text pt-0">
+
+            </v-card-text>
+
+            <v-divider></v-divider>
+
+            <v-card-text class="white--text">
+              {{ new Date().getFullYear() }} — <strong>My Startup</strong>
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-footer>
   </v-app>
 </template>
 
@@ -34,6 +57,14 @@ export default {
   name: 'App',
   data: () => ({
     val: true,
+    icons: [
+      'mdi-facebook',
+      'mdi-twitter',
+      'mdi-linkedin',
+      'mdi-instagram',
+      'mdi-youtube',
+      'mdi-whatsapp',
+    ],
   }),
   updated() {
     this.val = this.$store.state.authenticated;
