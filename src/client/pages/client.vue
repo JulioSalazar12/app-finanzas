@@ -54,7 +54,7 @@ export default {
     ],
     rulesPhone: [
       v => !!v || 'This field is required',
-      v => v <= 999999999 && v >= 9000000000 || 'This phone invalid',
+      v => v <= 999999999 && v >= 900000000 || 'This phone invalid',
     ],
     rulesDNI: [
       v => !!v || 'This field is required',
@@ -73,7 +73,7 @@ export default {
           telefono: this.telefono,
         };
         const entity = {
-          entidadFinanciera: this.entidadFinanciera,
+          nombre: this.entidadFinanciera,
         }
         ClientService.createClient(client)
           .then((response) => {

@@ -67,13 +67,14 @@ export default {
           let charDeudor = this.deudor[0];
           let charTasa = this.tasa[0];
           let charEf = this.entidadFinanciera[0];
+          let idLogged = localStorage.getItem('user');
         const Bills = {
           idAcreedor: { id: charAcreedor[0] },
           idDeudor:   { id: charDeudor[0] },
           idTasa:     { id: charTasa[0] },
           idEf:       { id: charEf[0] },
           //TODO: pasar idUsuario logueado
-          idUsuario:  { id: 1 },
+          idUsuario:  { id: idLogged },
           valor_Nominal: this.valorNominal,
           td: this.td,
           Fecha_Inicio: this.fechaInicio,
