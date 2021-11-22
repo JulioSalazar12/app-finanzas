@@ -40,6 +40,16 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "costs" */ '@/costs/pages/costs')
+  },
+  {
+    path: '/log-in',
+    name: 'log-in',
+    component: ()=>import('@/log-in/pages/log-in')
+  },
+  {
+    path: '/sign-up',
+    name: 'sign-up',
+    component: ()=>import('@/sign-up/pages/sign-up')
   }
 ]
 
